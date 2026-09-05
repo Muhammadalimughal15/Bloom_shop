@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useCart } from "./CartContext";
+import { useCart } from "../context/CartContext";
 
 const Products = () => {
   const [products, setProducts] = useState([]);

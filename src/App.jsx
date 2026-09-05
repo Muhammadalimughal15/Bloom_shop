@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import Products from "./components/Products";
 import ProductDetails from "./components/ProductDetails";
 import Cart from "./components/Cart";
-import { CartProvider } from "./components/CartContext";
+import { CartProvider } from "./context/CartContext";
 
 const App = () => {
   return (

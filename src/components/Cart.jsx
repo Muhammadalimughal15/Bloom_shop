@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useCart } from "./CartContext";
+import { useCart } from "../context/CartContext";
 import { Minus, Plus, Heart, Car, Shield } from "lucide-react";
 
 const Cart = () => {
