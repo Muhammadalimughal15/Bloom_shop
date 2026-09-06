@@ -13,6 +13,40 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 z-50 w-full h-18.75 bg-white border-t-2 border-b border-gray-200 shadow-md">
 
+      {/* ================= MENU ANIMATIONS ================= */}
+      <style>
+        {`
+          @keyframes menuDrop {
+            0% {
+              opacity: 0;
+              transform: translateY(-20px) scale(0.97);
+            }
+
+            60% {
+              opacity: 0.85;
+              transform: translateY(3px) scale(1.005);
+            }
+
+            100% {
+              opacity: 1;
+              transform: translateY(0) scale(1);
+            }
+          }
+
+          @keyframes menuItems {
+            0% {
+              opacity: 0;
+              transform: translateY(-10px);
+            }
+
+            100% {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        `}
+      </style>
+
       {/* ================= MAIN CONTAINER ================= */}
       <div className="max-w-384 h-full mx-auto px-6 py-4">
 
@@ -280,33 +314,55 @@ const Navbar = () => {
 
       {/* ================= MOBILE MENU ================= */}
       {menuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-md z-50">
+        <div
+          className="
+            md:hidden
+            absolute
+            top-full
+            left-0
+            w-full
+            bg-white
+            border-b
+            border-gray-200
+            shadow-md
+            z-50
+          "
+          style={{
+            animation:
+              "menuDrop 0.45s cubic-bezier(0.16, 1, 0.3, 1)"
+          }}
+        >
 
           <div className="px-6 py-4 flex flex-col items-center gap-2">
 
-            {/* Contact */}
+            {/* ================= CONTACT ================= */}
             <a
               href="#"
               className="
                 w-full
                 text-center
-                px-4 py-3
+                px-4
+                py-3
                 rounded-lg
                 text-[15px]
                 text-[#172033]
                 hover:text-[#F5A000]
                 hover:bg-[#FFF3E0]
               "
+              style={{
+                animation: "menuItems 0.35s ease-out 0.08s both"
+              }}
             >
               Contact
             </a>
 
-            {/* Sign In */}
+            {/* ================= SIGN IN ================= */}
             <button
               className="
                 w-full
                 text-center
-                px-4 py-3
+                px-4
+                py-3
                 rounded-lg
                 text-[15px]
                 text-[#172033]
@@ -314,16 +370,20 @@ const Navbar = () => {
                 hover:bg-[#FFF3E0]
                 cursor-pointer
               "
+              style={{
+                animation: "menuItems 0.35s ease-out 0.14s both"
+              }}
             >
               Sign In
             </button>
 
-            {/* Sign Up */}
+            {/* ================= SIGN UP ================= */}
             <button
               className="
                 w-full
                 text-center
-                px-4 py-3
+                px-4
+                py-3
                 rounded-lg
                 text-[15px]
                 text-black
@@ -331,6 +391,9 @@ const Navbar = () => {
                 hover:bg-[#E89500]
                 cursor-pointer
               "
+              style={{
+                animation: "menuItems 0.35s ease-out 0.20s both"
+              }}
             >
               Sign Up
             </button>
